@@ -20,7 +20,7 @@ const columns = [
 
     <DataTable
       :columns="columns"
-      ajax="https://datatablesnetvue3ajax-uilk--3000.local-credentialless.webcontainer.io/data.json?_=1671710119886"
+      ajax="/data.json"
       class="table table-hover table-striped"
       width="100%"
     >

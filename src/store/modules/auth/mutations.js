@@ -1,8 +1,6 @@
 const SET_CURRENT_USER = (state, value) => {
   state.currentUser = value;
   saveState("auth.currentUser", value);
-  saveState("role", value.role);
-
 };
 
 const TOGGLE_LOAD = state => {

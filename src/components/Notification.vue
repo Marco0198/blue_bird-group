@@ -1,18 +1,9 @@
 <template>
   <div  class="alert alert-danger" :class="{notification: true, loading: timer}">
     <div>
-      <p v-text="notification.text.error_description"></p>
+      <p>{{notification.text.error_description}}</p>
     </div>
-    <!-- <button
-      type="button"
-      class="notification--remove"
-      @click="removeNotification()"
-    >
-      <i class="fa fa-times" />
-    </button> -->
-    <!-- { "error": "invalid_grant", "error_description": "Email not confirmed" } -->
-
-
+  
   </div>
 </template>
 
@@ -42,7 +33,7 @@ export default {
   mounted() {
     this.timer = setTimeout(() => {
       this.triggerClose();
-    }, 3000);
+    }, 5000);
   }
 };
 </script>

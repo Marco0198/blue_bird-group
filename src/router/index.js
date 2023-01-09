@@ -23,7 +23,7 @@ const routes = [
     meta: {
       authRequired: true
     },
-    beforeEnter: ifRoleIsFinance
+    // beforeEnter: ifRoleIsFinance
 
   },
   {

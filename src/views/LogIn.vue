@@ -30,8 +30,7 @@
       </p>
       <p class="mt-5 mb-3 text-muted">&copy; 2019-2023</p>
     </form>
-    
-            <form @submit.prevent="signup()"  class="form-signin w-50"  v-else>
+<form @submit.prevent="signup()" class="form-signin w-50" v-else>
       <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
       <label for="inputEmail" class="sr-only">Email address</label>
@@ -43,6 +42,7 @@
           Already have a log in?
           <span @click="toggleSignup">Return to log in.</span>
         </p>
+        <p class="mt-5 mb-3 text-muted">&copy; 2019-2023</p>
     </form>
     
       </div>
@@ -89,6 +89,7 @@ export default {
     ...mapActions("auth", ["attemptLogin", "attemptSignUp", "addNotification"]),
     toggleSignup() {
       this.isLogin = !this.isLogin;
+
     },
     toggleIcon() {
       this.showPassword = !this.showPassword;
@@ -118,6 +119,7 @@ export default {
         .catch(err => {
           this.handleUnsuccessfulLogin(err);
         });
+      console.log(currentUser)
     },
     handleSuccessfulLogin() {
       this.transferToDashboard();
