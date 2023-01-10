@@ -119,7 +119,7 @@ export default {
         .catch(err => {
           this.handleUnsuccessfulLogin(err);
         });
-      console.log(currentUser)
+      console.log(this.currentUser)
     },
     handleSuccessfulLogin() {
       this.transferToDashboard();
