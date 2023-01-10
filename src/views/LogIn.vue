@@ -26,7 +26,7 @@
         <span @click="toggleSignup">Create an account.</span>
       </p>
       <p class="mt-5 mb-3 text-muted">&copy; 2019-2023</p>
-        <span class="mt-5 mb-3 text-muted">Email and Password use to login</span><br>
+        <span class="mt-5 mb-3 text-muted">Email and Password use to login on GoTrue</span><br>
         <span class="mt-5 mb-3 text-muted">Email:tshimangamarco@gmail.com</span><br>
         <span class="mt-5 mb-3 text-muted">Password: cash1011</span>
     </form>
