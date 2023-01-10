@@ -14,7 +14,7 @@ possimus in unde repellendus. Ex quos magnam quis. Harum molestiae eius porro ea
 <script>
 import DataTable from "../components/DataTable.vue";
 import NavBar from "../components/NavBar.vue"
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
 export default {
   components: { DataTable, NavBar },
   name: "Dashboard",
@@ -26,14 +26,7 @@ export default {
     this.currentUser.role = "";
   },
   computed: {
-    ...mapState("auth", ["notifications", "currentUser"]),
-    eyeIcon() {
-      return {
-        far: true,
-        "fa-eye": this.showPassword,
-        "fa-eye-slash": !this.showPassword
-      };
-    }
+    ...mapState("auth", [ "currentUser"]),
   },
 };
 </script>

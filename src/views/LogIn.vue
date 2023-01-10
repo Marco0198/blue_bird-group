@@ -1,7 +1,7 @@
 <template>
   <div
     class="text-center"
-  >
+ >
     <div class="container mt-5 justify-content-center d-flex">
     
       <template v-if="notifications.length > 0">
@@ -23,7 +23,7 @@
       <input type="email" v-model="loginCreds.email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
       <label for="inputPassword"  class="sr-only">Password</label>
       <input type="password" v-model="loginCreds.password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <button class=" w-100 mt-3 btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button class=" w-100 mt-3 btn btn-lg btn-primary btn-block" :disabled="loading " type="submit">Sign in</button>
       <p class="text-primary mt-3">
         Are you a new user?
         <span @click="toggleSignup">Create an account.</span>
@@ -37,7 +37,7 @@
       <input type="email" v-model="loginCreds.email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
       <label for="inputPassword"  class="sr-only">Password</label>
       <input type="password" v-model="loginCreds.password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <button class=" w-100 mt-3 btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+      <button class=" w-100 mt-3 btn btn-lg btn-primary btn-block" :disabled="loading "  type="submit">Sign up</button>
       <p class="text-primary mt-3">
           Already have a log in?
           <span @click="toggleSignup">Return to log in.</span>
@@ -76,7 +76,7 @@ export default {
     };
   },
   computed: {
-    ...mapState("auth", ["notifications", "currentUser"]),
+    ...mapState("auth", ["notifications", "currentUser","loading"]),
     eyeIcon() {
       return {
         far: true,

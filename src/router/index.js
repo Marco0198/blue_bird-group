@@ -23,7 +23,6 @@ const routes = [
     meta: {
       authRequired: true,
     },
-    // beforeEnter: ifRoleIsFinance
 
   },
   {
@@ -83,19 +82,5 @@ router.beforeEach((to, from, next) => {
 
 
 });
-function ifRoleIsFinance  (to, from, next)  { 
- 
-//  if (localStorage.getItem("role")!=="finance") { console.log("login done you not finance");
-//   next(); 
-//   return;
-// }
-// else if (localStorage.getItem("role")=="finance"||null) { console.log("login done you not finance");
-// next(); 
-// return;
-// }
-// else{ 
-//   alert("this page is available on when your role is finance please try later")
-// }
- router.push({  name: 'dashboard' });
-}
+
 export default router

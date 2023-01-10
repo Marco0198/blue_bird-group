@@ -25,14 +25,7 @@ export default {
     this.currentUser.role = "";
   },
 	computed: {
-    ...mapState("auth", ["notifications", "currentUser"]),
-    eyeIcon() {
-      return {
-        far: true,
-        "fa-eye": this.showPassword,
-        "fa-eye-slash": !this.showPassword
-      };
-    }
+    ...mapState("auth", ["currentUser"]),
   },
 };
 </script>

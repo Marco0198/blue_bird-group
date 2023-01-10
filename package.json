@@ -7,7 +7,6 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "@vuelidate/core": "^2.0.0",

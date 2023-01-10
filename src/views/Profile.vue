@@ -19,15 +19,7 @@ export default {
 
   },
   computed: {
-    ...mapState("auth", ["notifications", "currentUser"]),
-
-    eyeIcon() {
-      return {
-        far: true,
-        "fa-eye": this.showPassword,
-        "fa-eye-slash": !this.showPassword
-      };
-    }
+    ...mapState("auth", [ "currentUser"]),
 
   },
  

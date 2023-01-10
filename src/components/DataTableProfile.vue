@@ -8,7 +8,7 @@
                 <th>Role</th>
                 <th>Create At</th>
                 <th>Confirmed At </th>
-                <th>Action </th>
+
                
             </tr>
         </thead>
@@ -39,6 +39,7 @@
 import { mapState, mapActions } from "vuex";
 import DataTableProfile from "../components/DataTableProfile.vue";
 import NavBar from "../components/NavBar.vue"
+
 export default {
   components:{DataTableProfile, NavBar},
   name: "Dashboard",

@@ -1,7 +1,8 @@
 <template>
   <div  class="alert alert-danger" :class="{notification: true, loading: timer}">
     <div>
-      <p>{{notification.text.error_description}}</p>
+      <p> {{notification.text.error_description }}</p>
+      
     </div>
   
   </div>

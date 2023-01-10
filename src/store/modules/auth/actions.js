@@ -12,15 +12,20 @@ const validate = ({ commit, state }) => {
 };
 
 const attemptLogin = ({ commit, dispatch }, credentials) => {
+  commit("TOGGLE_LOAD");
+
   return new Promise((resolve, reject) => {
     dispatch("attemptConfirmation", credentials).then(() => {
       auth
         .login(credentials.email, credentials.password)
         .then(response => {
+         
           resolve(response);
           commit("SET_CURRENT_USER", response);
         })
         .catch(error => {
+          commit("TOGGLE_LOAD");
+
           reject(error.json);
         });
     });
@@ -28,13 +33,14 @@ const attemptLogin = ({ commit, dispatch }, credentials) => {
 };
 
 const attemptConfirmation = ({ commit, dispatch }, credentials) => {
+  commit("TOGGLE_LOAD");
   return new Promise((resolve, reject) => {
     if (!credentials.token) {
       resolve();
       return;
     }
     auth
-      .confirm('Ndbl2wrT41TkEzY4kIYZAA')
+      .confirm(credentials.token)
       .then(response => {
         credentials.token = null;
         dispatch("attemptLogin", credentials);
@@ -48,6 +54,7 @@ const attemptConfirmation = ({ commit, dispatch }, credentials) => {
         resolve(response);
       })
       .catch(error => {
+        commit("TOGGLE_LOAD");
         reject(error);
         console.log(error);
       });
@@ -55,6 +62,7 @@ const attemptConfirmation = ({ commit, dispatch }, credentials) => {
 };
 
 const attemptSignUp = ({ commit }, credentials) => {
+  commit("TOGGLE_LOAD");
   return new Promise((resolve, reject) => {
     auth
       .signup(credentials.email, credentials.password)
@@ -64,6 +72,7 @@ const attemptSignUp = ({ commit }, credentials) => {
         resolve(response);
       })
       .catch(error => {
+        commit("TOGGLE_LOAD");
         reject(error);
         console.log("It's an error", error);
       });
@@ -71,6 +80,7 @@ const attemptSignUp = ({ commit }, credentials) => {
 };
 
 const attemptLogout = ({ commit }) => {
+  commit("TOGGLE_LOAD");
   return new Promise((resolve, reject) => {
     const user = auth.currentUser();
     user
