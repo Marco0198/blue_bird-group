@@ -1,16 +1,15 @@
 <template>
   <div>
 <nav-bar></nav-bar>
-{{ currentUser }}
-<data-table></data-table>
+<data-table-profile></data-table-profile>
   </div>
 </template>
 <script>
 import { mapState, mapActions } from "vuex";
-import DataTable from "../components/DataTable.vue";
+import DataTableProfile from "../components/DataTableProfile.vue";
 import NavBar from "../components/NavBar.vue"
 export default {
-  components:{DataTable, NavBar},
+  components:{DataTableProfile, NavBar},
   name: "Dashboard",
   props: {
     msg: String
