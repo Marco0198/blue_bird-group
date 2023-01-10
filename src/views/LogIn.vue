@@ -1,9 +1,7 @@
 <template>
   <div
-    class="text-center"
- >
+    class="text-center">
     <div class="container mt-5 justify-content-center d-flex">
-    
       <template v-if="notifications.length > 0">
         <transition-group name="notification-list" tag="div"  appear>
           <notification
@@ -14,7 +12,6 @@
           ></notification>
         </transition-group>
       </template>
- 
       <div class="container form-position justify-content-center d-flex position-fixed">
         <form @submit.prevent="login()" v-if="isLogin" class="form-signin w-50"  >
       <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
@@ -29,6 +26,9 @@
         <span @click="toggleSignup">Create an account.</span>
       </p>
       <p class="mt-5 mb-3 text-muted">&copy; 2019-2023</p>
+        <span class="mt-5 mb-3 text-muted">Email and Password use to login</span><br>
+        <span class="mt-5 mb-3 text-muted">Email:tshimangamarco@gmail.com</span><br>
+        <span class="mt-5 mb-3 text-muted">Password: cash1011</span>
     </form>
 <form @submit.prevent="signup()" class="form-signin w-50" v-else>
       <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
@@ -37,16 +37,17 @@
       <input type="email" v-model="loginCreds.email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
       <label for="inputPassword"  class="sr-only">Password</label>
       <input type="password" v-model="loginCreds.password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <button class=" w-100 mt-3 btn btn-lg btn-primary btn-block" :disabled="loading "  type="submit">Sign up</button>
+      <button class=" w-100 mt-3 btn btn-lg btn-primary btn-block"   type="submit">Sign up</button>
       <p class="text-primary mt-3">
           Already have a log in?
           <span @click="toggleSignup">Return to log in.</span>
         </p>
         <p class="mt-5 mb-3 text-muted">&copy; 2019-2023</p>
+        <span class="mt-5 mb-3 text-muted">Email and Password use to login</span><br>
+        <span class="mt-5 mb-3 text-muted">Email:tshimangamarco@gmail.com</span><br>
+        <span class="mt-5 mb-3 text-muted">Password: cash1011</span>
     </form>
-    
       </div>
-  
     </div>
   </div>
 </template>

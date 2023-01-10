@@ -33,7 +33,6 @@ const attemptLogin = ({ commit, dispatch }, credentials) => {
 };
 
 const attemptConfirmation = ({ commit, dispatch }, credentials) => {
-  commit("TOGGLE_LOAD");
   return new Promise((resolve, reject) => {
     if (!credentials.token) {
       resolve();
@@ -54,7 +53,6 @@ const attemptConfirmation = ({ commit, dispatch }, credentials) => {
         resolve(response);
       })
       .catch(error => {
-        commit("TOGGLE_LOAD");
         reject(error);
         console.log(error);
       });
@@ -68,7 +66,6 @@ const attemptSignUp = ({ commit }, credentials) => {
       .signup(credentials.email, credentials.password)
       .then(response => {
         console.log("Confirmation email sent", response);
-        commit("TOGGLE_LOAD");
         resolve(response);
       })
       .catch(error => {
@@ -91,6 +88,7 @@ const attemptLogout = ({ commit }) => {
         commit("SET_CURRENT_USER", null);
       })
       .catch(error => {
+        commit("TOGGLE_LOAD");
         reject(error);
         console.log("Could not log out", error);
       });

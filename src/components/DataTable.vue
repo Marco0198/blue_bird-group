@@ -16,8 +16,8 @@ const columns = [
 
 <template>
   <div class="container">
- 
-
+    <!-- this link Doesn't work so i did find the source then i made a json file for that  -->
+    <!-- ajax="https://datatablesnetvue3ajax-uilk--3000.local-credentialless.webcontainer.io/data.json?_=1671710119886" -->
     <DataTable
       :columns="columns"
       ajax="/data.json"
